@@ -560,6 +560,12 @@ streamFile(stream_t stream, const char *fileName)
 		metaData = util_utf82char(tmp);
 		log_notice("streaming: %s (%s)", metaData,
 		    isStdin ? "stdin" : fileName);
+
+		//JE Additions	
+		fprintf(stdout,"%s\n", isStdin ? "stdin" : fileName);
+		fflush(stdout);
+		//END JE Additions
+
 		xfree(metaData);
 
 		/* MP3 streams are special, so set the metadata explicitly: */
